@@ -97,7 +97,142 @@ class _FlashCategoryState extends State<FlashCategory> {
               ],
             ),
           ),
-          Divider()
+          Divider(),
+          Padding(
+            padding: const EdgeInsets.only(top: 6.0, left: 15, right: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      height: 32,
+                      width: 32,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          image: DecorationImage(
+                            image: NetworkImage(
+                                "https://previews.123rf.com/images/asmati/asmati1610/asmati161000013/63402431-alarm-clock-sign-white-icon-on-red-circle-.jpg"),
+                            fit: BoxFit.cover,
+                          )),
+                    ),
+                    SizedBox(
+                      width: 6,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Flash Sales",
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.red,
+                              fontWeight: FontWeight.w500,
+                            )),
+                        Text("Multiple low price spike",
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w400,
+                            )),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Row(
+                          children: [
+                            Container(
+                              height: 20,
+                              width: 20,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[200],
+                                borderRadius: BorderRadius.circular(1),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "1",
+                                  style: TextStyle(
+                                      color: Colors.red,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 6,
+                            ),
+                            Text(
+                              ":",
+                              style: TextStyle(
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              width: 6,
+                            ),
+                            Container(
+                              height: 20,
+                              width: 20,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[200],
+                                borderRadius: BorderRadius.circular(1),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "29",
+                                  style: TextStyle(
+                                      color: Colors.red,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                            Text(
+                              ":",
+                              style: TextStyle(
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              width: 6,
+                            ),
+                            Container(
+                              height: 20,
+                              width: 20,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[200],
+                                borderRadius: BorderRadius.circular(1),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "15",
+                                  style: TextStyle(
+                                      color: Colors.red,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                Container(
+                  height: 45,
+                  width: 45,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: NetworkImage(
+                              "https://foneunits.com/wp-content/uploads/2020/11/apple-iphone-12-pro-.jpg"))),
+                ),
+                Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: NetworkImage(
+                              "https://static.bhphoto.com/images/images2500x2500/1565185022_1490741.jpg"))),
+                )
+              ],
+            ),
+          )
         ],
       ),
     );

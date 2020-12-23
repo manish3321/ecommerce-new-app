@@ -36,8 +36,8 @@ class HomeCategory extends StatelessWidget {
               name,
               style: TextStyle(
                   fontSize: 10,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black),
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey[600]),
             )
           ],
         ),
