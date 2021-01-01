@@ -1,5 +1,6 @@
 import 'package:ecommerce/pages/homepage/flashcategory.dart';
 import 'package:ecommerce/pages/homepage/homecategory.dart';
+import 'package:ecommerce/pages/homepage/newitems.dart';
 import 'package:ecommerce/pages/homepage/search.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
@@ -120,6 +121,23 @@ class _HomepageState extends State<Homepage> {
                 height: 15,
               ),
               FlashCategory(),
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                child: Row(
+                  children: [
+                    Text(
+                      "Just for you",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        color: Colors.grey[700],
+                        fontWeight: FontWeight.w700,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Newitems(),
             ],
           ),
         )),
