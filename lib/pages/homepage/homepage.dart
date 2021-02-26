@@ -1,7 +1,7 @@
 import 'package:ecommerce/pages/homepage/flashcategory.dart';
 import 'package:ecommerce/pages/homepage/homecategory.dart';
 import 'package:ecommerce/pages/homepage/newitems.dart';
-import 'package:ecommerce/pages/homepage/search.dart';
+
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
@@ -15,13 +15,49 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          actions: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  height: 40,
+                  width: MediaQuery.of(context).size.width * 0.85,
+                  child: TextField(
+                    cursorColor: Color.fromARGB(10, 2, 8, 4),
+                    decoration: InputDecoration(
+                        isDense: true,
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.transparent),
+                            borderRadius: BorderRadius.all(Radius.circular(5))),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.transparent),
+                            borderRadius: BorderRadius.all(Radius.circular(5))),
+                        hintText: 'Apple Iphone 11 Pro',
+                        hintStyle: TextStyle(color: Colors.grey, fontSize: 12),
+                        prefixIcon: Icon(
+                          Icons.search,
+                          color: Colors.grey,
+                        ),
+                        filled: true,
+                        fillColor: Colors.grey[300]),
+                  ),
+                ),
+                Icon(
+                  Icons.notifications,
+                  color: Colors.black,
+                )
+              ],
+            ),
+          ],
+        ),
         backgroundColor: Colors.grey[100],
         body: SingleChildScrollView(
             child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8, top: 0),
           child: Column(
             children: [
-              Search(),
               Padding(
                 padding: const EdgeInsets.only(top: 10, bottom: 10),
                 child: Container(
