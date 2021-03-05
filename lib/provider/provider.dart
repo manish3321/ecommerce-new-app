@@ -3,18 +3,32 @@ import 'package:flutter/material.dart';
 
 class CartProvider extends ChangeNotifier {
   List<Product> _products = [];
-  double _total = 0;
+  double _totalAmount = 0;
   int _totalitems = 0;
 
   void add(Product product) {
     _products.add(product);
-    _totalitems = _totalitems++;
-    _total = _total + product.price;
+    _totalitems++;
+    _totalAmount = _totalAmount + product.price;
+    notifyListeners();
   }
 
   void remove(Product product) {
     _products.remove(product);
-    _total = _total - product.price;
+    _totalAmount = _totalAmount - product.price;
     _totalitems = _totalitems--;
+    notifyListeners();
+  }
+
+  int get totalItems {
+    return _totalitems;
+  }
+
+  double get totalAmount {
+    return _totalAmount;
+  }
+
+  List<Product> get products {
+    return _products;
   }
 }

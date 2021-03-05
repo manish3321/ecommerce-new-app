@@ -1,9 +1,11 @@
 import 'package:ecommerce/pages/homepage/flashcategory.dart';
 import 'package:ecommerce/pages/homepage/homecategory.dart';
 import 'package:ecommerce/pages/homepage/newitems.dart';
+import 'package:ecommerce/provider/provider.dart';
 
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:provider/provider.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -13,8 +15,10 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
+    CartProvider product = Provider.of<CartProvider>(context);
     return SafeArea(
       child: Scaffold(
+        // -----------------AppBar----------//
         appBar: AppBar(
           backgroundColor: Colors.white,
           actions: [
@@ -52,7 +56,12 @@ class _HomepageState extends State<Homepage> {
             ),
           ],
         ),
+
+        //-----------End appBar---------------//
+
         backgroundColor: Colors.grey[100],
+
+        //-------bodypart-------------//
         body: SingleChildScrollView(
             child: Padding(
           padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8, top: 0),
@@ -95,6 +104,10 @@ class _HomepageState extends State<Homepage> {
                   ),
                 ),
               ),
+
+              //-----------------End of carousel ------------------//
+
+              //---------start of category ----------------------//
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -153,6 +166,8 @@ class _HomepageState extends State<Homepage> {
                   ),
                 ],
               ),
+
+              //-------end of category row-----------------//
               SizedBox(
                 height: 15,
               ),

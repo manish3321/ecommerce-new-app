@@ -1,7 +1,10 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:ecommerce/model/product.dart';
 import 'package:ecommerce/pages/Cart/cart.dart';
+import 'package:ecommerce/provider/provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class ItemDetails extends StatefulWidget {
   final Product product;
@@ -15,6 +18,7 @@ class _ItemDetailsState extends State<ItemDetails> {
   int message = 1;
   @override
   Widget build(BuildContext context) {
+    CartProvider product = Provider.of<CartProvider>(context);
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -110,6 +114,25 @@ class _ItemDetailsState extends State<ItemDetails> {
                       ),
                     ),
                   ),
+                  Positioned(
+                    top: 5,
+                    right: 45,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.black),
+                      height: 15,
+                      width: 15,
+                      child: Center(
+                          child: Text(
+                        product.totalItems.toString(),
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Colors.white,
+                        ),
+                      )),
+                    ),
+                  )
                 ],
               ),
               Padding(
@@ -256,7 +279,18 @@ class _ItemDetailsState extends State<ItemDetails> {
                           borderRadius: BorderRadius.circular(13.0),
                           side: BorderSide(color: Colors.red)),
                       color: Colors.orange[800],
-                      onPressed: () {},
+                      onPressed: () {
+                        product.add(widget.product);
+                        Fluttertoast.showToast(
+                            msg:
+                                "          Succesfully added to cart          ",
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.BOTTOM,
+                            timeInSecForIosWeb: 1,
+                            backgroundColor: Colors.black,
+                            textColor: Colors.white,
+                            fontSize: 12.0);
+                      },
                       child: Center(
                           child: Text(
                         'Add to cart',
